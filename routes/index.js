@@ -5,5 +5,11 @@ var projects = require('../projects.json');
  */
 
 exports.view = function(req, res){
-  	res.render('index', projects);
+	var gridFlag = {'isGrid': false};
+  	res.render('index', {'projects': projects, 'gridFlag': false});
+};
+
+exports.viewGrid = function(req, res) {
+	var gridFlag = {'isGrid': true};
+	res.render('index', {'projects': projects, 'gridFlag': true});
 };
